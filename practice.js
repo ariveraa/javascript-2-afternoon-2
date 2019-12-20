@@ -127,7 +127,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  let evenArray = []; 
+  let oddArray = []; 
+  let finalArray = []; 
+  for(let i = 0 ; i < numbersArray.length; i++){
+    numbersArray[i] % 2 === 0 ? evenArray.push(numbersArray[i]) : oddArray.push(numbersArray[i]) 
+  }
+  finalArray.push(evenArray); 
+  finalArray.push(oddArray);
+  return finalArray; 
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -149,7 +159,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(array){
+  let randomNumber = getRandomArbitrary();
+  for(let i = 0 ; i < array.length; i++){
+    if(array[i] === randomNumber){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -178,7 +196,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  if(!myGroceryList || !item){
+    myGroceryList = [];
+    return myGroceryList
+  }
+  
+  for(let i = 0 ; i < numbersArray.length; i++){
+    if(myGroceryList[i] === item){
+      myGroceryList.splice(i,1);
+    }
+  }
+ 
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item){
+  if(!myGroceryList || !item){
+    myGroceryList = [];
+    return myGroceryList
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -188,7 +228,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  let array = []; 
+  for(let i = 1; i <= 215; i++ ){
+    array.push(i);
+  }
+  return array; 
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -204,7 +250,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(numbers){
+  let newArray = []; 
+  for(let i = 0; i < numbers.length; i++){
+    newArray.push(+numbers[i] + 10);
+  }
+  return newArray;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -229,7 +281,11 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  let longer = null;
+  arr1.length > arr2.length ? longer = arr1  : longer = arr2; 
+  return longer;
+}
 
 
 /*
@@ -241,7 +297,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  let newArray = []; 
+  for(let i = 0; i < arr1.length; i++){
+    for(let j = 0; j < arr2.length; j++){
+      if(arr1[i] === arr2[j]){
+        newArray.push(arr1[i]);
+      }
+    }
+  }
+  return newArray;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -282,7 +348,15 @@ var colt = {
 */
 
 //Code Here
+function addEmployee(employee){
+  devMountainEmployees.push(employee);
+}
+addEmployee(joe);
+addEmployee(cahlan);
+addEmployee(ryan);
+addEmployee(colt);
 
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -291,7 +365,13 @@ var colt = {
 */
 
 //Code Here
+//devMountainEmployees.splice(1,1);
 
+  for(let i = 0; i < devMountainEmployees.length; i++){
+    if(devMountainEmployees[i] === cahlan){
+      devMountainEmployees.splice(i,1); 
+    }
+  }
 
 
 ////////// PROBLEM 13 //////////
@@ -304,6 +384,7 @@ var colt = {
 
 //Code Here
 
+let users = []; 
 
 
 /*
@@ -324,9 +405,16 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
-
-
+// users.push(user1);
+let createUser = function(name, email, password, username){
+  let user = {name: name, email: email, password: password, username: username}; 
+  return user;
+}
+let user2 = createUser("adrian", "riveracavana", "yes", "rivera");
+let user3 = createUser("mady", "rivmady", "bunalope", "bun");
+// users.push(user2);
+// users.push(user3);
+users = [user1, user2, user3];
 /*
   Now you have a very common data structure. 
   Twitter is a good use case.
@@ -338,6 +426,12 @@ var user1 = {
 */
 
 //Code Here
+
+  for(let i = 0; i < users.length; i++){
+    if(users[i]["email"] === 'mark.mciver@devmounta.in'){
+      users.splice(i,1); 
+    }
+  }
 
 
 
